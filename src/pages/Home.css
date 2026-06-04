@@ -1,0 +1,239 @@
+/* src/pages/Home.css - NUEVO CÓDIGO COMPLETO */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #f97316 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home-content {
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logo {
+  font-size: clamp(2rem, 8vw, 4rem);
+  margin-bottom: 1rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-blue {
+  color: #ffffff;
+}
+
+.logo-orange {
+  color: #f97316;
+}
+
+.tagline {
+  font-size: clamp(0.9rem, 4vw, 1.3rem);
+  margin-bottom: clamp(1rem, 4vw, 2rem);
+  opacity: 0.95;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  max-width: 600px;
+  margin: 0 auto clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.hero-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    margin: 0 1rem 2rem 1rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 1.5rem;
+    margin: 0 0.5rem 1.5rem 0.5rem;
+  }
+}
+
+.hero-title {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-description {
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  margin-bottom: clamp(1rem, 4vw, 2rem);
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.cta-button {
+  background: #f97316;
+  color: white;
+  border: none;
+  padding: clamp(0.75rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+  width: auto;
+  min-width: 180px;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .cta-button {
+    min-width: 150px;
+    width: 100%;
+  }
+}
+
+.cta-button:hover {
+  background: #ea580c;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 2rem);
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: clamp(1rem, 4vw, 1.5rem);
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  flex: 1;
+  max-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    min-width: 130px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .feature-card {
+    min-width: 200px;
+    max-width: 250px;
+    width: 100%;
+  }
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.feature-card h3 {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: clamp(0.75rem, 3vw, 0.85rem);
+  opacity: 0.9;
+}
+
+/* Responsive para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-card {
+    max-width: 500px;
+  }
+  
+  .feature-card {
+    min-width: 140px;
+  }
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 380px) {
+  .hero-card {
+    padding: 1rem;
+  }
+  
+  .feature-card {
+    min-width: 100%;
+  }
+}

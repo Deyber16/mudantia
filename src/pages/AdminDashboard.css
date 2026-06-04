@@ -1,0 +1,294 @@
+/* src/pages/AdminDashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* src/pages/AdminDashboard.css */
+.admin-dashboard {
+  min-height: 100vh;
+  background: #f3f4f6;
+  font-family: system-ui, sans-serif;
+}
+
+.admin-header {
+  background: #1e3a8a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.text-blue { color: white; }
+.text-orange { color: #f97316; }
+.admin-badge {
+  background: #f97316;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.admin-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.admin-user button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.admin-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+  width: 45px;
+  height: 45px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.stat-card.blue .stat-icon { background: #dbeafe; }
+.stat-card.orange .stat-icon { background: #fed7aa; }
+.stat-card.purple .stat-icon { background: #e0e7ff; }
+
+.stat-card h3 {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-bottom: 0.2rem;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: white;
+  padding: 0.3rem;
+  border-radius: 40px;
+  width: fit-content;
+}
+
+.admin-tabs button {
+  padding: 0.5rem 1.2rem;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.admin-tabs button.active {
+  background: linear-gradient(135deg, #1e3a8a 0%, #f97316 100%);
+  color: white;
+}
+
+.admin-table-container {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.admin-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.admin-table-header h3 {
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.refresh-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.admin-table-responsive {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 0.8rem;
+  background: #f8fafc;
+  border-bottom: 2px solid #e5e7eb;
+  color: #1e3a8a;
+}
+
+.admin-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.admin-table tr:hover {
+  background: #f8fafc;
+}
+
+.price {
+  font-weight: 600;
+  color: #059669;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: white;
+}
+
+.admin-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.admin-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3a8a 0%, #f97316 100%);
+  color: white;
+}
+
+.admin-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #f97316;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .admin-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+  .admin-header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Agrega esto al final de AdminDashboard.css */
+.reportes-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-reporte {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-reporte.usuarios {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+}
+
+.btn-reporte.conductores {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+}
+
+.btn-reporte.solicitudes {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+}
+
+.btn-reporte:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
